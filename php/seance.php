@@ -39,12 +39,18 @@
         <p class="tir">Type de cible (14x14) :</p>
         <div class="type">
         
+        <input type="radio" name="sports" id="cible1" Checked>
+            <label for="cible1" ><img src="../images/cible_14x14_6_small Rouge.png" alt=""></label>
 
-       <input type="image" class="cible" id="image" alt="Login" src="../images/cible_14x14_6_small Rouge.png">
-        <input type="image" class="cible" id="image" alt="Login" src="../images/cible_14x14_10a_small.png">
-        <input type="image" class="cible" id="image" alt="Login" src="../images/cible_14x14_10b_small.png">
-        <input type="image" class="cible" id="image" alt="Login" src="../images/cible_14x14_10c_small.png">
-        </select>
+            <input type="radio" name="sports" id="cible2"required>
+            <label for="cible2" ><img src="../images/cible_14x14_10c_small.png" alt=""></label>
+
+            <input type="radio" name="sports" id="cible3"required>
+            <label for="cible3" ><img src="../images/cible_14x14_10b_small.png" alt=""></label>
+
+            <input type="radio" name="sports" id="cible4"required>
+            <label for="cible4" ><img src="../images/cible_14x14_10a_small.png" alt=""></label>
+        
 
         </div>
 
