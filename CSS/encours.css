@@ -1,0 +1,152 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+a{
+    color:black;
+    text-decoration: none;
+
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .affiche{
+        width: 67%;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .affiche{
+        width: 45%;
+    }
+}
+
+
+
+
+
+
+.nav2-container{
+    background-color: #6F6F6F ;
+    color: #FFFFFF;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+.nav2-container a{
+    width: 10%;
+}
+
+.fleche{
+    width: 50%;
+    margin-left: 5%;
+    
+}
+
+.rendu{
+
+    display: flex;
+    width: 100%;
+   justify-content: center;
+
+}
+
+.points{
+display: flex;
+width: 100%;
+justify-content: space-around;
+
+}
+.point{
+    padding: 2%;
+    margin-top: 1%;
+    background-color:#D9D9D9 ;
+}
+
+/* score */
+
+.container-stats{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.container-items-stats{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+}
+
+
+.container-item-stat{
+    width: 22%;
+    height: 150%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #D9D9D9;
+}
+
+.icone-stat{
+    width:  28px;
+    height: 28px;
+}
+
+@media only screen and (max-width: 576px) {
+
+
+    .container-items-stats{
+        width: 33%;
+        flex-wrap: wrap;
+    }
+
+    .container-item-stat{
+        margin-top: 15px;
+    }
+}
+
+/* Button */
+.button-container{
+    display: flex;
+    margin-top: 45px;
+    justify-content: space-around;
+}
+
+.btn{
+    width:  190px;
+    height: 45px;
+    cursor: pointer;
+    border:none;
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
+}
+
+.btn-pause{
+background-color: #5B5B5B;
+}
+
+.btn-abandon{
+background-color: #F35353;
+}
+
+@media only screen and (max-width: 576px) {
+
+
+    .button-container{ 
+        justify-content: center;
+        margin-top: 22px;
+    }
+
+    .btn{
+        width:  97px;
+        height: 45px;
+        margin: 22px;
+        font-size: 14px;
+    }
+}
