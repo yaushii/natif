@@ -16,12 +16,6 @@ a{
     font-size: 250%;
 
 }
-.cible:active{
-   
-    border-style: solid;
-        border-color: blue;
-    
-}
 
 .envoie{
     background-color: #6F6F6F;
@@ -51,8 +45,14 @@ p{
 .distance{
     display: flex;
     width: 60%;
-    justify-content: space-around;
+    
 }
+
+.dis{
+    width: 55%;
+}
+
+
 .tir{
     font-size: 25px;
 margin: 1%;
@@ -76,9 +76,9 @@ width: 23%;
 }
 
 .plomb{
-    width:9%;
+    width:5%;
 }
-.plomb:active{
+.plomb:after{
     
         background-color: blue;
 }
@@ -92,6 +92,7 @@ width: 60%;
 .session-container{
     margin-left: 1%;
 }
+
 
 
 
