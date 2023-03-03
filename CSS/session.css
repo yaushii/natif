@@ -44,7 +44,7 @@ p{
 }
 .distance{
     display: flex;
-    width: 60%;
+    width: 70%;
     
 }
 
@@ -52,11 +52,27 @@ p{
     width: 55%;
 }
 
-
 .tir{
+    
     font-size: 25px;
 margin: 1%;
+}
 
+input.cache[type="radio"]{
+    display: none;
+    visibility: hidden;
+}
+
+input.cache[type="checkbox"]{
+    display: none;
+    visibility: hidden;
+}
+label:checked{
+    background-color: aqua;
+}
+
+input.cache:checked{
+    visibility: hidden;
 }
 .M{
     background-color: #C4C4C4;
@@ -65,7 +81,7 @@ margin: 1%;
     font-size: 32px;
 }
 .type{
-    width: 60%;
+    width: 90%;
 }
 .cible{
 width: 23%;
@@ -76,11 +92,7 @@ width: 23%;
 }
 
 .plomb{
-    width:5%;
-}
-.plomb:after{
-    
-        background-color: blue;
+    width:7%;
 }
 
 .btn{
@@ -92,7 +104,4 @@ width: 60%;
 .session-container{
     margin-left: 1%;
 }
-
-
-
 
