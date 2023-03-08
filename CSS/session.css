@@ -95,6 +95,9 @@ width: 23%;
     width:7%;
 }
 
+#plomb1 {
+    width: 7%;
+}
 .btn{
 display: flex;
 justify-content: center;

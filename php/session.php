@@ -1,5 +1,12 @@
+<?php
+include 'connexionBDD.php';
+$requete = $db->query('SELECT * from seance');
+while ($row = $requete->fetchArray()) {
+    var_dump($row);}
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +17,6 @@
 </head>
 <body>
     
-
-
-     
-   
-
 <div class="nav"> 
         <div class="nav2-container"> 
             <a href="../html/index.html" ><img href="/" class="fleche" src='../images/fleche-gauche.png' alt="logo!"/></a>
@@ -47,7 +49,7 @@
     <div class="container-items-stats"> 
         <div class="container-item-stat"> 
             <img href="/" class="icone-stat" src='../images/balle.png'alt="balle!"/>
-            <p> 10 tirs </p>
+            <p> <?php seance.nbrTirs ?></p>
         </div>
         <div class="container-item-stat"> 
             <img href="/" class="icone-stat" src='../images/cible.png'alt="balle!"/>

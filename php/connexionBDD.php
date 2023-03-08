@@ -1,9 +1,16 @@
 <?php
-$db = new SQLite3('../bdd.db');
 
-$results = $db->query('SELECT * from distance');
-while ($row = $results->fetchArray()) {
-    var_dump($row);
+
+try {
+    $db = new sqlite3('../bdd.db');
+
+$requete = $db->query('SELECT * from seance');
+while ($row = $requete->fetchArray()) {
+    var_dump($row);}
+
+} catch (Exception $e) {
+    echo "Impossible d'accéder à la base de données SQLite : ".$e->getMessage();
+    die();
 }
 ?>
 
