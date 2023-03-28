@@ -20,19 +20,20 @@
 <?php
 include 'connexionBDD.php';
 
+?>
 
+<div class="historique">
 
-
-$requete = $db->query('SELECT *
-FROM seance');
+    <?php 
+$requete = $db->query('SELECT *FROM seance');
   
     while ($seance = $requete->fetchArray()) {
      
-        echo $seance["ID"] ,' - ' ,$seance["distance"],' - ',$seance["nbrTirs"],' - ',$seance["date"],"<br/>";
-      }?>
+        echo $seance["idseance"] ,' - ' ,$seance["distance"],' - ',$seance["nbtirs"],' - ',$seance["date"],  "<br/>";
+         }?>
 
     
-
+         
 </body>
 </html>
 

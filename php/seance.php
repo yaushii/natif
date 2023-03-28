@@ -55,7 +55,7 @@
             <input class="cache" type="radio" name="type" id="cible3" value="../images/cible_14x14_10b_small.png">
             <label for="cible3" ><img src="../images/cible_14x14_10b_small.png" alt=""></label>
 
-            <input class="cache" type="radio" name="type" id="cible4" value="4">
+            <input class="cache" type="radio" name="type" id="cible4" value="../images/cible_14x14_10c_small.png">
             <label for="cible4" ><img src="../images/cible_14x14_10c_small.png" alt=""></label>
         
         </div>

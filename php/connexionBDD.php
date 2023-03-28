@@ -3,7 +3,7 @@
 
 
 try {
-    $db = new sqlite3('../bdd.db');
+    $db = new sqlite3('../target.db');
 
 $requete = $db->query('SELECT * from seance');
 while ($row = $requete->fetchArray()) {

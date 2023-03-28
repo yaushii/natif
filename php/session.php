@@ -34,6 +34,16 @@ include 'connexionBDD.php';
 
 <div class="points">
 
+    <?php
+        $requete = $db->query('SELECT *FROM score');
+  
+            while ($seance = $requete->fetchArray()) {
+   
+            echo $seance["point"] ,'  ' ;
+
+            }?>
+
+
     <div class ="point"><p>1</p></div>
     <div class ="point"> <p>2</p></div>
     <div class ="point"> <p>3</p></div>
@@ -134,7 +144,7 @@ document.getElementById("reset").addEventListener('click', reset);
 
 @$valider=$_GET["valider"];
 
-if(isset($valider)){
+/*if(isset($valider)){
     echo "<br>distance choisie ";
     echo $dist;
     echo "<br>type de cible:  ";
@@ -143,12 +153,13 @@ if(isset($valider)){
     echo ($tir);
     echo " tir(s) de selectionne";
 
-}
+}*/
+
 
 
     if(isset($dist) && isset($type) && isset($tir) && isset($valider))
    {
-    $requete = ("INSERT INTO 'seance'('distance','types','nbrTirs','date') VALUES($dist, '$type',$tir, datetime())");
+    $requete = ("INSERT INTO 'seance'('distance','typeCible','nbtirs','date') VALUES($dist, '$type',$tir, datetime())");
         $db->exec($requete);
        return 0;
         
@@ -156,5 +167,6 @@ if(isset($valider)){
     echo "<br>veuillez remplir tout les champs";
    }
     
-?>
+   ?>
+</div>
 </html>
