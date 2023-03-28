@@ -11,19 +11,21 @@ a{
 }
 
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width : 1201 ) {
     .affiche{
         width: 67%;
     }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (max-width: 1200px) {
     .affiche{
-        width: 45%;
+        width: 50%;
     }
 }
 
 
-
+.btn-primary{
+    
+}
 
 
 

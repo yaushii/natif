@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='../CSS/session.css' rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Creation Seance</title>
 </head>
 <body>
@@ -21,13 +23,14 @@
 
     
 
-    <form action="" method="post">
+    <form action="session.php" method="get">
 
-    <div class="session-container">
-    <p class="tir">Distance de tir (M) :</p>
-        <div class="distance">
 
-        <input class="cache" type="radio" name="dist" id="tir" value="10">
+        <section>
+            <section id="choix">
+            <p class="tir">Distance de tir (M) :</p>
+                <article id="distance">
+                <input class="cache" type="radio" name="dist" id="tir" value="10">
             <label for="tir" ><img class="dis" src="../images/numero-10.png" alt=""></label>
 
        <input class="cache" type="radio" name="dist" id="tir1" value="25">
@@ -36,32 +39,32 @@
             <input class="cache" type="radio" name="dist" id="tir2" value="50">
             <label for="tir2" ><img class="dis" src="../images/50.png" alt=""></label>
 
-        </div>
+                </div>    
+                </article>
+                <p class="tir">Type de cible (14x14) :</p>
 
+                <article id="cible">
 
-        <p class="tir">Type de cible (14x14) :</p>
-
-        <div class="type"> 
-
-        <input class="cache" type="radio" name="type" id="cible1" value="1" Checked>
+                    <div class="cible">
+                    <input class="cache" type="radio" name="type" id="cible1" value="../images/cible_14x14_6_small Rouge.png" Checked>
             <label for="cible1" ><img src="../images/cible_14x14_6_small Rouge.png" alt=""></label>
 
-            <input class="cache" type="radio" name="type" id="cible2" value="2">
+            <input class="cache" type="radio" name="type" id="cible2" value="../images/cible_14x14_10a_small.png">
             <label for="cible2" ><img src="../images/cible_14x14_10a_small.png" alt=""></label>
 
-            <input class="cache" type="radio" name="type" id="cible3" value="3">
+            <input class="cache" type="radio" name="type" id="cible3" value="../images/cible_14x14_10b_small.png">
             <label for="cible3" ><img src="../images/cible_14x14_10b_small.png" alt=""></label>
 
             <input class="cache" type="radio" name="type" id="cible4" value="4">
             <label for="cible4" ><img src="../images/cible_14x14_10c_small.png" alt=""></label>
         
         </div>
-
-        <p class="tir">Nombre de tirs :</p>
-        <div class="nbr">
-
-
-         <input class="cache" type="checkbox" name="tir" id="plomb" value="1" >
+                </div>    
+                </article>
+                <p class="tir">Nombre de tirs :</p>
+                <article id="tir">
+                <div class="tir">
+                <input class="cache" type="checkbox" name="tir" id="plomb" value="1" >
             <label for="plomb" ><img class="plomb" src="../images/plomb.PNG" alt=""></label>
         <input class="cache" type="checkbox" name="tir" id="plomb1" value="2" >
             <label for="plomb1" ><img class="plomb" src="../images/plomb.PNG" alt=""></label>
@@ -81,18 +84,19 @@
             <label for="plomb8" ><img class="plomb" src="../images/plomb.PNG" alt=""></label>
         <input class="cache" type="checkbox" name="tir" id="plomb9" value="10" >
             <label for="plomb9" ><img class="plomb" src="../images/plomb.PNG" alt=""></label>
+                </div>    
+                </article>
 
+            </section>        
+    </section>
 
-
-
-
-        </div>
 
         <div class="btn">
-        <input href="../php/session.php" class ="btn-btn" name ="valider" type="submit" value="envoie">
+        <input href="../php/session.php" class="btn btn-secondary" name ="valider" type="submit" value="envoie">
+      
         </div>
-
-
+<div class="session-container">
+   
 </form>
 
 <?php
@@ -105,27 +109,7 @@ include 'connexionBDD.php';
 @$tir = $_POST["tir"];
 @$valider=$_POST["valider"];
 
-if(isset($valider)){
-    echo "<br>distance choisie ";
-    echo $dist;
-    echo "<br>type de cible:  ";
-    echo $type;
-    echo "<br> vous avez ";
-    echo ($tir);
-    echo " tir(s) de selectionne";
 
-}
-
-
-    if(isset($dist) && isset($type) && isset($tir))
-   {
-            $requete = ("INSERT INTO 'seance'('distance','types','nbrTirs') VALUES($dist, $type,$tir)");
-        $db->exec($requete);
-       return 0;
-        
-   }else{
-    echo "<br>veuillez remplir tout les champs";
-   }
     ?>
 
 </body>

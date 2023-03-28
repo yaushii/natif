@@ -9,3 +9,122 @@ a{
     text-decoration: none;
 
 }
+.nav-container{
+    background-color: #6F6F6F ;
+    color: #FFFFFF;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+p{
+    text-align : left;
+}
+.retour{
+    width: 50%;
+    margin-left: 5%;
+    
+}
+.nav-container a{
+    width: 10%;
+}
+
+@media only screen and (max-width: 600px) {
+    .logo{
+        width: 100%;
+    }
+
+    .btn-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .bouton{
+
+        font-size: 60%;
+    
+    }
+}
+
+@media screen and (min-width: 600px) {
+
+    .logo{
+        width: 150%;
+    }
+
+    .btn-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .bouton{
+
+        font-size: 60%;
+    
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    .logo{
+        width: 250%;
+    }
+
+    .btn-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .bouton{
+
+        font-size: 60%;
+    
+    }
+}
+
+.logo-container{
+width: 100%;
+display: flex;
+justify-content: center;
+margin-top: 29px;
+}
+
+.logo{
+    width: 50%;
+}
+.btn-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.items-container{
+background-color: #6F6F6F ;
+color: #FFFFFF;
+border-radius: 45px;
+width: 100%;
+height: 90px;
+display: flex;
+justify-content: space-around;
+align-items: center;
+margin-top: 10%;
+}
+.fleche{
+    width: 10%;
+}
+
+.bouton{
+    width: 50%;
+    height: 100px;
+    margin-top: 35px;
+}
+p{
+    font-size: 250%;
+}
+

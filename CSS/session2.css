@@ -61,18 +61,13 @@ article#tir{
 width: 20%;
 height: 100%;
 }
-.cible{
-    display: flex;
-    justify-content: space-evenly;
 
-    width: 100%;
-}
 .tir{
     display: flex;
     justify-content: space-evenly;
     width: 75%;
 }
-.tir img{
+.tir label{
     width: 9%;
 height: 70%;
 }

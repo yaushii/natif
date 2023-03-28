@@ -52,11 +52,7 @@ p{
     width: 55%;
 }
 
-.tir{
-    
-    font-size: 25px;
-margin: 1%;
-}
+
 
 input.cache[type="radio"]{
     display: none;
@@ -67,44 +63,70 @@ input.cache[type="checkbox"]{
     display: none;
     visibility: hidden;
 }
-label:checked{
-    background-color: aqua;
-}
 
 input.cache:checked{
     visibility: hidden;
 }
-.M{
-    background-color: #C4C4C4;
-    border-radius: 100%;
-    padding: 5%;
-    font-size: 32px;
+
+
+
+section#menu{
+    height: 27vh;
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
-.type{
-    width: 90%;
+
+article{
+    display: flex;
+    
+}
+
+article#distance{
+    height: 25%;
+    width: 100%;
+    background-color: brown;
+}
+article#cible{
+    height: 45%;
+    width: 100%;
+    background-color: red;
+}
+article#tir{
+    height: 25%;
+    width: 430%;
+    background-color:crimson;  
+}
+.distance{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+}
+.distance img{
+width: 20%;
+height: 100%;
 }
 .cible{
-width: 23%;
+    display: flex;
+    justify-content: space-evenly;
 
+    width: 100%;
 }
-.nbr{
-    width: 60%;
+.tir{
+    display: flex;
+    justify-content: space-evenly;
+    width: 21%;
 }
-
 .plomb{
-    width:7%;
+    width: 100%;
+height: 80%;
 }
-
-#plomb1 {
-    width: 7%;
+input[type="button"] {
+    height: 30%;
+    width: 10%;
+    font-size: 200%;
 }
-.btn{
-display: flex;
-justify-content: center;
-width: 60%;
-
-}
-.session-container{
-    margin-left: 1%;
-}
-
