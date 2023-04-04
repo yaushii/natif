@@ -15,7 +15,7 @@
             <p>historique</p>
         </div>
     </div>
-        <div class="logo-container"> 
+        
         
 <?php
 include 'connexionBDD.php';
@@ -27,10 +27,10 @@ include 'connexionBDD.php';
     <?php 
 $requete = $db->query('SELECT *FROM seance');
   
-    while ($seance = $requete->fetchArray()) {
+    while ($seance = $requete->fetchArray()) {?>
      
-        echo $seance["idseance"] ,' - ' ,$seance["distance"],' - ',$seance["nbtirs"],' - ',$seance["date"],  "<br/>";
-         }?>
+     <section> <div class="calen" ><img class="date" ><img class="calendar" src='../images/calendrier.png'>  <?php echo $seance["date"];?></div>  <div class="distance" > <img class="dist" src="../images/metre-ruban.png"> <?php echo $seance["distance"];?></div>  <div class="tir" > <img class="nbr" src="../images/balle.png"> <?php echo$seance["nbtirs"];?></div><div class="sablier" ><img class="sable" src='../images/sablier.png'>  <?php echo $seance["temps"];?></div><div class="calen" ><img class="cible" ><img class="cible" src='../images/cible.png'>  <?php echo $seance["point"];?></div></section>
+        <?php }?>
 
     
          

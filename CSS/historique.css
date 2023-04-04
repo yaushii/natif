@@ -32,3 +32,40 @@ p{
     margin-left: 5%;
     
 }
+
+.historique{
+
+width: 100%;
+
+}
+.date{
+    
+    width: 100%;
+}
+.distance{
+    width: 100%;
+}
+.tir{
+    width: 100%;
+}
+.calendar{
+    width: 5%;
+}
+.calen{
+    width: 100%;
+}
+.dist{
+    width: 6%;
+}
+.nbr{
+    width: 6%;
+}
+section{
+    display: flex;
+}
+.sable{
+    width: 30%;
+}
+.cible{
+    width: 16%;
+}

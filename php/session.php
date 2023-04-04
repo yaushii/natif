@@ -1,8 +1,21 @@
 <?php
 include 'connexionBDD.php';
-@$dist = $_GET["dist"];
-@$type = $_GET["type"];
-@$tir = $_GET["tir"];
+session_start();
+$dist = $_GET["dist"];
+$type = $_GET["type"];
+$tir = $_GET["tir"];
+
+
+/*
+    echo "<br>distance choisie ";
+    echo $dist;
+    echo "<br>type de cible:  ";
+    echo $type;
+    echo "<br> vous avez ";
+    echo ($tir);
+    echo " tir(s) de selectionne";
+*/
+
 ?>
 
 
@@ -13,7 +26,7 @@ include 'connexionBDD.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href= '../css/encours.css ' rel="stylesheet"/>
-    <script type="text/javascript" src="../js/index.js" defer></script>
+    <script type="text/javascript" src="../js/chrono.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Partie en cours</title>
@@ -35,25 +48,18 @@ include 'connexionBDD.php';
 <div class="points">
 
     <?php
-        $requete = $db->query('SELECT *FROM score');
+
+        $requete = $db->query('SELECT  point, numTir FROM score where seance_idseance = (select MAX(idseance) from seance)');
   
-            while ($seance = $requete->fetchArray()) {
+            while ($score = $requete->fetchArray()) {?>
    
-            echo $seance["point"] ,'  ' ;
+            
+                <div class ="point"><p> <?php echo $score["point"] ,'  '?> </p> </div> 
 
-            }?>
+           <?php }?>
 
 
-    <div class ="point"><p>1</p></div>
-    <div class ="point"> <p>2</p></div>
-    <div class ="point"> <p>3</p></div>
-    <div class ="point"> <p>4</p></div>
-    <div class ="point"> <p>5</p></div>
-    <div class ="point"> <p>6</p></div>
-    <div class ="point"> <p>7</p></div>
-    <div class ="point"><p>8</p> </div>
-    <div class ="point"> <p>9</p></div>
-    <div class ="point"><p>10</p> </div>
+    
 
 </div>
 
@@ -80,58 +86,14 @@ include 'connexionBDD.php';
                 <div id="chrono">
                     <span id="minutes">00</span>:<span id="seconds">00</span>.<span id="millis">000</span>
                 </div>
-            <button id="start" class="btn btn-primary go">GO</button>
-                       <script>
-                            var spanMinutes = document.getElementById("minutes");
-var spanSeconds = document.getElementById("seconds");
-var spanMillis = document.getElementById("millis");
-
-var chrono = 0;   // millisecondes
-var timer = null; // pour stocker le handle du timer
-
-function reset() { // remet le compteur à zéro
-  chrono = -1;
-  increment();
-}
-
-function start() {
-if (timer == null){
- 	timer = setInterval(increment, 1);
-  }
-}
-
-function stop() {
-	clearInterval(timer);
-  timer = null;
-}
-
-function increment() {
-	// TODO: 
-  //  - incrémenter le chrono 
-  chrono++;
-  //  - calculer minutes, secondes, millis
-  var millis = chrono %1000;
-  var seconds = ~~(chrono / 1000) % 60;
-  var minutes = ~~(chrono / 60000);
-  //  - mettre à jour le HTML
-  spanMinutes.innerHTML = ("0"+minutes).slice(-2);
-  spanSeconds.innerHTML = ("00"+seconds).slice(-2);
-  spanMillis.innerHTML = ("000"+millis).slice(-3);
-}
-
-// enregistrer les événements
-document.getElementById("start").addEventListener('click', start);
-document.getElementById("stop").addEventListener('click', stop);
-document.getElementById("reset").addEventListener('click', reset);
-
-                       </script>
+            
         </div>
     </div>
 </div>
 
 <div class="button-container">
-    <button id="stop" onclick="stop()" class="btn btn-success btn btn-pause">Pause</button>
-    <button class="btn btn-danger" onclick="reset()">Abandon</button>
+    <button id="stop"  class="btn btn-success btn btn-pause">Go</button>
+    <button class="btn btn-danger" >Abandon</button>
 </div>
 
 
@@ -157,15 +119,14 @@ document.getElementById("reset").addEventListener('click', reset);
 
 
 
-    if(isset($dist) && isset($type) && isset($tir) && isset($valider))
+    if(isset($dist) && isset($type) && isset($tir) && isset($valider) && $_SESSION['i']==0)
    {
-    $requete = ("INSERT INTO 'seance'('distance','typeCible','nbtirs','date') VALUES($dist, '$type',$tir, datetime())");
+    $requete = ("INSERT INTO 'seance'('distance','typeCibles','nbtirs','date','etat') VALUES($dist, '$type',$tir, datetime(), 1)");
         $db->exec($requete);
+        $_SESSION['i'] = 1;
        return 0;
-        
-   }else{
-    echo "<br>veuillez remplir tout les champs";
    }
+   
     
    ?>
 </div>

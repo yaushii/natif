@@ -5,11 +5,11 @@
 try {
     $db = new sqlite3('../target.db');
 
-$requete = $db->query('SELECT * from seance');
+/*$requete = $db->query('SELECT * from seance');
 while ($row = $requete->fetchArray()) {
    // var_dump($row);}
 
-}} catch (Exception $e) {
+}*/}catch (Exception $e) {
     echo "Impossible d'accéder à la base de données SQLite : ".$e->getMessage();
     die();
 }

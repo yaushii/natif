@@ -1,41 +1,57 @@
-var spanMinutes = document.getElementById("minutes");
-var spanSeconds = document.getElementById("seconds");
-var spanMillis = document.getElementById("millis");
+//console.log("test");
 
-var chrono = 0;   // millisecondes
-var timer = null; // pour stocker le handle du timer
+var images = document.getElementsByClassName("cible");
+var images = document.getElementsByClassName("dis");
+var images = document.getElementsByClassName("plomb");
+console.log(images);
 
-function reset() { // remet le compteur à zéro
-  chrono = -1;
-  increment();
-}
-
-function start() {
-if (timer == null){
- 	timer = setInterval(increment, 1);
+function ToggleBorder(event) {
+  console.log(event.classList)
+  if(event.classList != "dis active-border" ) {
+    event.classList.add("active-border");
+  }else{
+    event.classList.remove("active-border");
   }
 }
 
-function stop() {
-	clearInterval(timer);
-  timer = null;
+
+document.querySelectorAll('.dis').forEach(item => {
+  item.addEventListener('click', event => {
+    ToggleBorder(item)
+  })
+})
+
+
+
+
+function ToggleBorderCible(event) {
+  console.log(event.classList)
+  if(event.classList != "cible active-borderCible" ) {
+    event.classList.add("active-borderCible");
+  }else{
+    event.classList.remove("active-borderCible");
+  }
 }
 
-function increment() {
-	// TODO: 
-  //  - incrémenter le chrono 
-  chrono++;
-  //  - calculer minutes, secondes, millis
-  var millis = chrono %1000;
-  var seconds = ~~(chrono / 1000) % 60;
-  var minutes = ~~(chrono / 60000);
-  //  - mettre à jour le HTML
-  spanMinutes.innerHTML = ("0"+minutes).slice(-2);
-  spanSeconds.innerHTML = ("00"+seconds).slice(-2);
-  spanMillis.innerHTML = ("000"+millis).slice(-3);
+
+document.querySelectorAll('.cible').forEach(item => {
+  item.addEventListener('click', event => {
+    ToggleBorderCible(item)
+  })
+})
+
+function ToggleBorderPlomb(event) {
+  console.log(event.classList)
+  if(event.classList != "plomb active-borderPlomb" ) {
+    event.classList.add("active-borderPlomb");
+  }else{
+    event.classList.remove("active-borderPlomb");
+  }
 }
 
-// enregistrer les événements
-document.getElementById("start").addEventListener('click', start);
-document.getElementById("stop").addEventListener('click', stop);
-document.getElementById("reset").addEventListener('click', reset);
+
+document.querySelectorAll('.plomb').forEach(item => {
+  item.addEventListener('click', event => {
+    ToggleBorderPlomb(item)
+  })
+})

@@ -69,17 +69,6 @@ input.cache:checked{
 }
 
 
-
-section#menu{
-    height: 27vh;
-    width: 100%;
-    background-color: aqua;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
 article{
     display: flex;
     
@@ -88,17 +77,17 @@ article{
 article#distance{
     height: 25%;
     width: 100%;
-    background-color: brown;
+   /* background-color: brown;*/
 }
 article#cible{
     height: 45%;
     width: 100%;
-    background-color: red;
+    /*background-color: red;*/
 }
 article#tir{
     height: 25%;
     width: 430%;
-    background-color:crimson;  
+    /*background-color:crimson;  */
 }
 .distance{
     display: flex;
@@ -129,4 +118,28 @@ input[type="button"] {
     height: 30%;
     width: 10%;
     font-size: 200%;
+}
+.session-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.btn input{
+    font-size: 210%;
+}
+
+
+.active-border{
+    border: #248D7D  10px solid;
+    border-radius: 50%;
+    background-color: #248D7D;
+}
+.active-borderCible{
+    border: #248D7D  15px solid;
+    border-radius: 20%;
+}
+.active-borderPlomb{
+    background-color: #248D7D;
+    border: #248D7D  15px solid;
+    border-radius: 20%;
 }
